@@ -1,0 +1,78 @@
+.capital {
+    display: flex;
+    margin: .5em 0;
+    border: 1px solid green;
+    padding: .5em;
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &--lowest {
+        background-color: #0c5882;
+    }
+
+    &--highest {
+        background-color: #a70606;
+    }
+}
+
+.main {
+    flex: 1 0;
+    flex-direction: column;
+
+    &__name {
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+
+    &__country {
+        width: 100%;
+        font-size: .8em;
+        color: gray;;
+    }
+}
+
+.weather {
+    flex: 2 0;
+    justify-content: space-around;
+
+    &__temp {
+        font-size: 2em;
+        color: orangered;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 15%;
+    }
+
+    &__inf {
+        font-size: 1.2em;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__descr {
+        width: 120px;
+        text-align: center;
+    }
+}
+
+.activity {
+    flex: 1 0;
+}
+
+.description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,22 @@
+<div class="capital" 
+[ngClass]="{'capital--lowest': capital.statusTemp === 'min', 
+            'capital--highest': capital.statusTemp === 'max'}">
+    <div class="capital__item main">
+        <span class="main__name">{{capital.name}}</span>
+        <span class="main__country">{{capital.country}}</span>
+    </div>
+    <div class="capital__item weather">
+        <div class="weather__temp">{{capital.temp}}</div>
+        <div class="weather__descr">
+            <img [src]="iconUrl + capital.weather.icon +'.png'" [alt]="capital.weather.main" />
+            <div class="description">
+                {{capital.weather.description}}
+            </div>
+        </div>
+        <div class="weather__inf">{{capital.pressure}}</div>
+        <div class="weather__inf">{{capital.humidity}}</div>
+    </div>
+    <form class="capital__item activity">
+
+    </form>
+</div>

@@ -1,0 +1,14 @@
+.container {
+    max-width: 1366px;
+    display: flex;  
+
+    &__main {
+        flex: 3 0;
+        // background: deepskyblue;
+    }
+
+    &__aside {
+       flex: 1 auto; 
+       background: hotpink;
+    }
+}
