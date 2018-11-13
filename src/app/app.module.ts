@@ -8,6 +8,8 @@ import { FilterComponent } from './filter/filter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './services/weather.service';
 import { CapitalComponent } from './capitals-list/capital/capital.component';
+import { SimpleModalModule } from 'ngx-simple-modal';
+import { AddCapitalComponent } from './modals';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,16 @@ import { CapitalComponent } from './capitals-list/capital/capital.component';
     CapitalsListComponent,
     FilterComponent,
     CapitalComponent,
+    AddCapitalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SimpleModalModule,
+  ],
+  entryComponents: [
+    AddCapitalComponent,
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

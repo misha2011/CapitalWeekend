@@ -110,7 +110,7 @@ const capitals = {
         country: 'Ireland',
         id: 2964574,
     },
-    Rome: {
+    Roma: {
         name: 'Rome',
         country: 'Italy',
         id: 3169070,
@@ -240,8 +240,8 @@ const capitals = {
         country: 'Turkey',
         id: 323786,
     },
-    Kyiv : {
-        name: 'Moscow',
+    Kiev : {
+        name: 'Kiev',
         country: 'Ukraine',
         id: 703448,
     },
