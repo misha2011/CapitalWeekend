@@ -37,10 +37,6 @@ export class CapitalsListComponent implements OnInit {
         this.weatherService.getWeatherByIds(Object.values(this.capitals).map(el => el.id)).subscribe((data: any) => {
             // console.log(data);
             this.capitalsList = data.map(capital => {
-                if (!this.capitals[capital.name]) {
-                    console.log(capital);
-
-                }
                 this.capitals[capital.name].temp = Math.round(capital.main.temp);
                 this.capitals[capital.name].weather = capital.weather[0];
                 this.capitals[capital.name].humidity = capital.main.humidity;
@@ -51,6 +47,28 @@ export class CapitalsListComponent implements OnInit {
 
             this.capitalsList[0].statusTemp = 'min';
             this.capitalsList[this.capitalsList.length - 1].statusTemp = 'max';
+        });
+    }
+
+    addNewSity(nameSity) {
+        const weatherSety = this.weatherService.newSity$.getValue()[nameSity];
+        if (!weatherSety) {
+            return;
+        }
+        const {
+            id,
+            main: { temp, humidity, pressure },
+            weather, name, sys: { country }
+        } = weatherSety;
+
+        this.capitalsList.unshift({
+            id,
+            country,
+            name,
+            temp: Math.round(temp),
+            humidity,
+            pressure: Math.round(pressure),
+            weather: weather[0],
         });
     }
 }

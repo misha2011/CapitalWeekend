@@ -1,4 +1,5 @@
 <div class="capitals-wrap">
+    <app-add-sity (newSity)="addNewSity($event)"></app-add-sity>
     <div *ngFor="let capital of capitalsList">
        <app-capital [capital]="capital"></app-capital>
     </div>

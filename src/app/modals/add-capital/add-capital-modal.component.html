@@ -3,10 +3,11 @@
         <h4>{{title}}</h4>
     </div>
     <div class="modal-body">
-        <form>
-            <label>{{question}}</label>
-            <input type="text" class="form-control" />
-        </form>
+        <label>{{question}}</label>
+        <input type="text" [formControl]="capital" />
+        <span *ngIf="isErrorMessageVisible()" class="error">
+            {{ getFieldErrors()}}
+        </span>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn--cancel" (click)="close()">Cancel</button>
